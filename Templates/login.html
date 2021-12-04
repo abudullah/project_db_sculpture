@@ -6,26 +6,24 @@
 <style>   
 Body {  
   font-family: Calibri, Helvetica, sans-serif;  
-  background-color: pink;  
+  background-color: rgb(10, 27, 11);  
 }  
 button {   
-       background-color: #4CAF50;   
+       background-color: #08ca8a;   
        width: 100%;  
-        color: orange;   
+        color: rgb(32, 22, 2);   
         padding: 15px;   
         margin: 10px 0px;   
         border: none;   
         cursor: pointer;   
          }   
- form {   
-        border: 3px solid #f1f1f1;   
-    }   
+
  input[type=text], input[type=password] {   
         width: 100%;   
         margin: 8px 0;  
         padding: 12px 20px;   
         display: inline-block;   
-        border: 2px solid green;   
+        border: 2px solid rgb(35, 245, 210);   
         box-sizing: border-box;   
     }  
  button:hover {   
@@ -42,12 +40,20 @@ button {
         padding: 25px;   
         background-color: lightblue;  
     }   
+
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 25%;
+      }
+
 </style>   
 </head>    
 <body>    
-    <center> <h1> Student Login Form </h1> </center>   
-    <form class="kla" action="{{ url_for('login') }}" method="POST">  
-        <div class="container">   
+    <center> <h2 style="color:rgb(15, 247, 177)"> Login to sculpture gallery </h2> </center>   
+    <form class="kla" action="{{ url_for('login') }}" method="POST" >  
+        <div class="container" style="margin-top:40px;margin-bottom:60px;margin-left:90px;margin-right:90px;background-color:#f5f4f1;height:300px;">   
             <label>Username : </label>   
             <input type="text" placeholder="Enter Username" name="em" required>  
             <label>Password : </label>   
@@ -55,8 +61,10 @@ button {
             <button type="submit">Login</button>   
             
            
-            register <a href="register"> register </a>   
+            Or if you don't have an account then  <a href="register"> register </a>   
         </div>   
-    </form>     
+    </form>   
+    
+    <img class='center' src="Pheadlogo.png" alt="logo" width="60" height="140">
 </body>     
 </html>  
