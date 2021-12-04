@@ -10,8 +10,8 @@
 
 
 
-<body>
-  <div style="padding:40px;margin-top:40px;margin-bottom:60px;background-color:#f5f4f1;height:300px;">
+<body style="background-color: black;">
+  <div style="padding:40px;margin-top:40px;margin-bottom:60px;margin-left:140px;margin-right:140px;background-color:#f5f4f1;height:430px;">
     <form id="upload-form" action="{{ url_for('signup') }}" method="POST" enctype="multipart/form-data">
 
       <label for="fname">Email</label>
@@ -29,9 +29,14 @@
         <option value="australia">Australia</option>
         <option value="canada">Canada</option>
         <option value="usa">USA</option>
+        <option value="germany">Germany</option>
+        <option value="turkey">Turkey</option>
+        <option value="egypt">Egypt</option>
+        <option value="uk">UK</option>
+
       </select>
 
-      <b>Upload your image </b>  
+      <b>Upload your profile photo </b>  
       <br>
 
       <!-- <label for="file-picker">Choose a profile picture:</label>
@@ -80,7 +85,7 @@
   
   input[type=submit] {
     width: 100%;
-    background-color: #4CAF50;
+    background-color: #0fdb75;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
