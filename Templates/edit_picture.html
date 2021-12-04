@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <title>Edit Sculpture</title>
+</head>
+
+
+
+<body style="background-color: black">
+  <div style="padding:40px;margin-top:40px;margin-bottom:30px;margin-left:60px;margin-right:60px;background-color:#f5f4f1;">
+    <form id="upload-form" action="{{ url_for('add_sculpture') }}" method="POST" enctype="multipart/form-data">
+
+      <label for="fname">Sculpture Name</label>
+      <input type="text" id="sculname" name="sculpture_name" placeholder="Name of sculpture">
+
+      <label for="fname">Price</label>
+      <input type="text" id="price" name="price" placeholder="Price ">
+
+
+  
+      <label for="country">Style</label>
+      <select id="country" name="art_style">
+        <option value="renaissance">renaissance</option>
+        <option value="French">French</option>
+        <option value="Egyptian">Egyptian</option>
+        <option value="Japanese">Japanese</option>
+        <option value="Sumerian">Sumerian</option>
+        <option value="Italian">Italian</option>
+      </select>
+
+      <label for="crdate">Creation Date</label>
+      <input type="date" name="creation_date" 
+      placeholder="dd-mm-yyyy" value=""
+      min="1990-01-01" max="2030-12-31">
+<!-- 
+      <b>Upload the  image of your sculpture </b>  
+      <br> -->
+
+      <!-- <label for="file-picker">Choose a profile picture:</label>
+      <input id="file-picker" type="file" name="avatar" accept="image/*" >
+      
+        -->
+
+
+      
+      <label for="imgupload">Upload Image</label>
+      <input type="file" name="file" class="btn btn-success" id="imageUpload" accept=".png, .jpg, .jpeg">
+
+      <input type="submit" value="Edit Sculpture"> 
+
+    </form>
+  </div>
+</body>
+<style>
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+
+  /* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+  input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit] {
+    width: 100%;
+    background-color: #0d7e6b;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a0a0;
+  }
+  
+  div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+
+
+  </style>
+  <body>
+</html>
