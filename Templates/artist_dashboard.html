@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Artist Dashboard</title>
+</head>
+<body>
+
+    <ul>
+        <li><a class="active" href="artistdashboard"> {{user}}</a></li>
+        <li><a href="/newsfeed">News Feed</a></li>
+        <li><a href="logout">Log Out</a></li>
+        <li><a href="adminlogin">Admin_Login</a></li>
+      </ul>
+      
+      <!-- <div style="padding:20px;margin-top:30px;background-color:#1abc9c;height:1500px;">
+        <h1>Fixed Top Navigation Bar</h1>
+        <h2>Scroll this page to see the effect</h2>
+        <h2>The navigation bar will stay at the top of the page while scrolling</h2> -->
+      
+
+
+      
+    <div class='a_details' style="padding:40px;margin-top:40px;margin-bottom:60px;background-color:#f5f4f1;height:300px;">
+        <!-- <div class='artist_photo' style='padding:40px;margin-right:40px;margin-left:40px'>
+             <img align='left' src="mangelo.jpeg" alt="sculptor photo"> -->
+
+             <div class="card">
+              <div class="image">
+                <img src="../static/{{userdetail[2]}}" alt="molly photo" width="150" height="160"/>
+              </div>
+              <div class="content">
+                <div class="header">Name : {{userdetail[0]}}</div>
+                <div class="meta">
+                  <span class="country">Country : {{userdetail[1]}} </span>
+                </div>
+
+              </div>
+
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+
+    <div style='margin: bottom 80px;'>
+      
+            <div class="mybutton">
+            <div style="text-align:center">        <!-- <<--- here the changes -->
+              <button class="ui inverted red button" align=center>Add New Sculpture </button>
+            </div>
+            </div>
+      </div>
+      
+
+
+
+
+  
+
+    <div class="table_container">
+      <table class="ui red table">
+        <thead>
+          <tr><th>Sculpture</th>
+          <th>Creation Date</th>
+          <th>Style</th>
+          <th>Price</th>
+          
+        </tr></thead><tbody>
+          {% for c in datum %}
+          <tr>
+
+          
+            <td>
+              <div class="ui cards">
+                <div class="card">
+                  <div class="content" align="center">
+                    <img  src="../static/{{c[0]}}" width=200px; height=180px>
+                  </div>
+                  <div class="header" align="center"> 
+                    <b>{{c[2]}}</b>
+                  </div>
+                  <div class="extra content">
+                    <div class="ui two buttons">
+                      <div class="editbutton" id={{c[6]}}>
+                      <div class="ui basic blue button">Edit</div>
+                      </div>
+                      <div class="deletebutton" id={{c[6]}}>
+                      <div class="ui basic red button">Delete</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+            </td>
+
+            
+            <td><h3>{{c[5]}}</h3></td>
+            <td><h3>{{c[4]}}</h3></td>
+            <td><h3>{{c[3]}}</h3></td>
+            
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+    </div>
+
+
+<style>
+body {margin:0;}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(13, 42, 95);
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: rgb(26, 39, 153);
+}
+
+.active {
+  background-color: #0954aa;
+}
+</style>
+<script>
+  $(document).ready(function(){
+    $(".mybutton").click(function(){
+     
+      window.location.replace('loadsculpture');
+
+      
+        
+      
+    });
+    $(".editbutton").click(function(){
+      var x=document.getElementsByClassName("editbutton")[0].id
+      window.location.replace('editfromuser/'+x)
+
+    });
+    $(".deletebutton").click(function(){
+      var x=document.getElementsByClassName("deletebutton")[0].id
+      window.location.replace('deleteformuser/'+x)
+
+    });
+  });
+  </script>
+</body>
+</html>

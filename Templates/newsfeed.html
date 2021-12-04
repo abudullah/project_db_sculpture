@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>NewsFeed</title>
+</head>
+<body>
+    <ul>
+        <li><a  href="artistdashboard">{{user}}</a></li>
+        <li><a class="active" href="newsfeed">News Feed</a></li>
+        <li><a href="logout">Log Out</a></li>
+        <li><a href="adminloginpage">Admin_login</a></li>
+       
+      </ul>
+
+      <h2 align='center'>All Sculptures</h2>
+      {%for post in posts %}
+      <div style="padding:40px;margin-top:10px;margin-bottom:10px;;height:100px;">
+
+        <div class="ui divided items">
+
+          <div class="item">
+            <div class="image"> 
+              <img src="../static/{{post[1]}}">
+            </div>
+            <div class="content">
+              <a class="header">{{post[1]}}</a>
+              <div class="meta">
+                <span class="cinema">Artist Name : {{post[2]}}</span>
+              </div>
+              <div class="description">
+                <p></p>
+              </div>
+              <div class="kala" id="{{post[0]}}" >
+                <div class="ui right floated primary button">
+                  Buy Sculpture
+                  <!-- <i class="right chevron icon"></i> -->
+                </div>
+                <!-- <div class="ui label">Limited</div> -->
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="image">
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      {%endfor%}
+      <script>
+        $(document).ready(function(){
+          $(".kala").click(function(){
+            var x=document.getElementsByClassName("kala")[0].id
+            
+            
+            window.location.replace('/buy/'+x);
+
+            
+              
+            
+          });
+        });
+        </script>
+
+      <style>
+        body {margin:0;}
+        
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: rgb(13, 42, 95);
+          position: fixed;
+          top: 0;
+          width: 100%;
+        }
+        
+        li {
+          float: left;
+        }
+        
+        li a {
+          display: block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        
+        li a:hover:not(.active) {
+          background-color: rgb(26, 39, 153);
+        }
+        
+        .active {
+          background-color: #0954aa;
+        }
+        </style>
+</body>
+</html>

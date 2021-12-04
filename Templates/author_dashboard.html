@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul>
+        <li><a class="active" href="#home">Artist Home</a></li>
+        <li><a href="#news">News Feed</a></li>
+        <li><a href="#contact">Log Out</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+      
+      <!-- <div style="padding:20px;margin-top:30px;background-color:#1abc9c;height:1500px;">
+        <h1>Fixed Top Navigation Bar</h1>
+        <h2>Scroll this page to see the effect</h2>
+        <h2>The navigation bar will stay at the top of the page while scrolling</h2> -->
+      
+    <div class='a_details' style="padding:40px;margin-top:40px;background-color:#f5f4f1;height:300px;">
+        <div class='artist_photo' style='padding:40px;margin-right:40px;margin-left:40px'>
+             <img align='left' src="mangelo.jpeg" alt="sculptor photo">
+        </div>
+
+    <div style="padding:40px;margin-left:80px;background-color:#f5f4f1;">
+        <br>
+        Name : Sculptor Name
+        <br>
+        Country : sculptor Country
+        <br>
+        Art Style : Italian Style
+    </div>
+
+    </div>
+
+    <div class="table_container">
+        <table class="customer-table table table-hover" style="width:100%" border="1 ">
+            <thead >
+              <tr>
+                <th><h3>Art Name</h3></th>
+                <th><h3>Creation Date</h3></th>
+                <th><h3>Style</h3></th>
+                <th><h3>Price</h3></th>
+              </tr>
+            </thead>
+            <thead>
+            {% for i in range(z) %}
+              <tr>
+                <td><h3>{{c[i][0]}}</h3></td>
+                <td><h3>{{c[i][1]}}</h3></td>
+                <td><h3>{{c[i][2]}}</h3></td>
+                <td><h3>{{c[i][3]}}</h3></td>
+              </tr>
+              {% endfor %}
+            </thead>
+          </table>
+    </div>
+
+
+
+<style>
+body {margin:0;}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(13, 42, 95);
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: rgb(26, 39, 153);
+}
+
+.active {
+  background-color: #0954aa;
+}
+</style>
+</body>
+</html>
